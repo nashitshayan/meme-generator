@@ -51,6 +51,37 @@ body {
 	margin: 0 auto;
 }
 
+.form {
+	border: 1px solid red;
+	padding: 1.5em;
+	max-width: 600px;
+	margin: 0 auto;
+}
+.form > div {
+	display: flex;
+	justify-content: space-between;
+	gap: 1em;
+}
+.form--input {
+	color: #0d0d0d;
+	width: 100%;
+	padding: 0.75em;
+	border: 1px solid #d5d4d8;
+	border-radius: 5px;
+}
+
+.form--submit-btn {
+	background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+	border-radius: 5px;
+	width: 100%;
+	padding: 0.75em;
+	margin-top: 1em;
+	border: none;
+	cursor: pointer;
+}
+.form--submit-btn:hover {
+	background: linear-gradient(90.41deg, #8925aa 1.14%, #821ea3 100%);
+}
 footer {
 	background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
 	color: #fff;
