@@ -21,7 +21,13 @@ function Main() {
 			};
 		});
 	};
-
+	function handleChange(e) {
+		const { name, value } = e.target;
+		setMeme((prevMeme) => ({
+			...prevMeme,
+			[name]: value,
+		}));
+	}
 	return (
 		<main className='main'>
 			<div className='form'>
@@ -31,12 +37,16 @@ function Main() {
 						placeholder='Top text'
 						className='form--input'
 						value={meme.topText}
+						onChange={handleChange}
+						name='topText'
 					/>
 					<input
 						type='text'
 						placeholder='Bottom text'
 						className='form--input'
 						value={meme.bottomText}
+						onChange={handleChange}
+						name='bottomText'
 					/>
 				</div>
 				<button className='form--submit-btn'>
@@ -47,7 +57,11 @@ function Main() {
 					/>
 				</button>
 			</div>
-			<img src={meme.randomImage} alt='meme' />
+			<div className='meme'>
+				<img src={meme.randomImage} alt='meme' className='meme--image' />
+				<h2 className='meme--text top'>{meme.topText}</h2>
+				<h2 className='meme--text bottom'>{meme.bottomText}</h2>
+			</div>
 		</main>
 	);
 }
